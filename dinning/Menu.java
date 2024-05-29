@@ -23,7 +23,7 @@ public class Menu {
         }
     }
 
-    boolean aval(String food) {
+    boolean isValidFood(String food) {
         return food.equals("Burger") || food.equals("Pizza") || food.equals("Salad") || food.equals("Pasta");
     }
 
