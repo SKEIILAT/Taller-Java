@@ -1,7 +1,7 @@
 public class DiningManagament {
     public static void main(String[] args) {
         menu menu = new menu();
-        Ord order = new Ord();
+        Ord order = new Or();
         sumThe_Total calculator = new sumThe_Total();
         Scanner scanner = new Scanner(System.in);
 

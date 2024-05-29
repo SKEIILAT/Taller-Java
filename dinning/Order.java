@@ -1,4 +1,9 @@
+package dinning;
 import java.util.Map;
+
+import Order;
+import menu;
+
 import java.util.HashMap;
 public class Order {
     Map<String, Integer> var45s;

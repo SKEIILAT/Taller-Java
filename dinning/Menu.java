@@ -1,3 +1,5 @@
+package dinning;
+
 import java.util.HashMap;
 import java.util.Map;
 
