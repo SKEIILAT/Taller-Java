@@ -1,7 +1,8 @@
-import java.util.List;
+package Interfaces;
+
 import java.util.Map;
 
-interface IOrder {
+public interface IOrder {
     public void addNewMeal(String meal, int quantity);
 
     public Map<String, Integer> getOrder();

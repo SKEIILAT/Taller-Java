@@ -1,12 +1,10 @@
 package dinning;
-import java.util.Map;
 
-import Order;
-import menu;
+import java.util.Map;
 
 import java.util.HashMap;
 
-public class Order implements IOrder {
+public class Order implements Interfaces.IOrder {
     Map<String, Integer> orders;
 
     public Order() {
