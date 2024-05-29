@@ -4,7 +4,7 @@ import java.util.Map;
 
 import java.util.HashMap;
 
-public class Order implements Interfaces.IOrder {
+public class Order implements interfaces.IOrder {
     Map<String, Integer> orders;
 
     public Order() {

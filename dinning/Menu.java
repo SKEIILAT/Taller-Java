@@ -3,10 +3,8 @@ package dinning;
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class Menu implements Interfaces.IMenu {
+public class Menu implements interfaces.IMenu {
     Map<String, Double> items;
-
 
     public void fillmenu() {
         items = new HashMap<>();
@@ -18,7 +16,7 @@ public class Menu implements Interfaces.IMenu {
 
     public void showMenu() {
         System.out.println("Menu:");
-        
+
         for (Map.Entry<String, Double> item : items.entrySet()) {
             System.out.println(item.getKey() + ": $" + item.getValue());
         }
@@ -31,5 +29,5 @@ public class Menu implements Interfaces.IMenu {
     public double getPrice(String food) {
         return items.get(food);
     }
-    
+
 }
