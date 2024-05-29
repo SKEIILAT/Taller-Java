@@ -9,7 +9,7 @@ public class Order {
     }
 
     void add(String var45, int quantity) {
-        //this will add the meal and quantity to the order
+        //this will add the meal and quantity to the Orderer
         var45s.put(var45, quantity);
     }
 
@@ -23,5 +23,31 @@ public class Order {
             total += quantity;
         }
         return total;
+    }
+
+    double baseCost = 5;
+
+    double calc(Order order, menu menu) {
+        //my function to calculate the total cost
+        double totalC_ = baseCost;
+        int var2 = 0;
+
+        for (Map.Entry<String, Integer> item : order.getvar45s().entrySet()) {
+            totalC_ += menu.getPrice(item.getKey()) * item.getValue();
+            var2 += item.getValue();
+        }
+
+        double discount = 0;
+        if (var2 > 5) {
+            discount = 0.1;
+        } else if (var2 > 10) {
+            discount = 0.2;
+        }
+
+        totalC_ = totalC_ - (totalC_ * discount);
+
+        //TODO: Add more discounts based on total cost in requirements
+
+        return totalC_;
     }
 }

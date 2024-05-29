@@ -2,10 +2,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Map;
 public class Menu {
-    Map<String, Integer> items;
+    Map<String, Double> items;
 
 
-    menu() {
+    void fillmenu() {
         items = new HashMap<>();
         items.put("Burger", 10.0);
         items.put("Pizza", 15.0);
@@ -21,8 +21,6 @@ public class Menu {
     }
 
     boolean aval(String var45) {
-        //is here
-        System.out.println("here i am in aval method");
         return var45.equals("Burger") || var45.equals("Pizza") || var45.equals("Salad") || var45.equals("Pasta");
     }
 
