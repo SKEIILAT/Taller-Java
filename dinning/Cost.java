@@ -6,19 +6,18 @@ public class Cost {
     double baseCost = 5;
 
     public double calc(Order order, Menu menu) {
-        // my function to calculate the total cost
         double totalCost = baseCost;
-        int meals = 0;
+        int mealsCount = 0;
 
         for (Entry<String, Integer> item : order.getOrder().entrySet()) {
             totalCost += menu.getPrice(item.getKey()) * item.getValue();
-            meals += item.getValue();
+            mealsCount += item.getValue();
         }
 
         double discount = 0;
-        if (meals > 5) {
+        if (mealsCount > 5) {
             discount = 0.1;
-        } else if (meals > 10) {
+        } else if (mealsCount > 10) {
             discount = 0.2;
         }
 
