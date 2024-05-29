@@ -1,26 +1,28 @@
-
+import java.util.Map;
+import java.util.Scanner;
+import dinning.Menu;
+import dinning.Order;
+import dinning.Cost;
 public class DiningManagament {
     public static void main(String[] args) {
         Menu menu = new Menu();
         Order order = new Order();
-        sumThe_Total calculator = new sumThe_Total();
+        Cost calculator = new Cost();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            menu.show();
-
+            menu.showMenu();
             System.out.print("Enter meal name to order or 'done' to finish: ");
-            String var45 = scanner.nextLine();
-            //System.out.println("here i am in main method");
-            //this will allow the user to exit the loop
-            if (var45.equals("done")) break;
-
-            if (!menu.aval(var45)) {
+            String meal = scanner.nextLine();
+            
+            if (meal.equals("done")) break;
+            
+            if (!menu.isValidFood(meal)) {
                 System.out.println("meal not available. Please re-select.");
                 continue;
             }
 
-            System.out.print("Enter quantity for " + var45 + ": ");
+            System.out.print("Enter quantity for " + meal + ": ");
             int quantity = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -29,19 +31,20 @@ public class DiningManagament {
                 continue;
             }
 
-            order.add(var45, quantity);
+            order.addNewMeal(meal, quantity);
         }
 
         double totalC_ = calculator.calc(order, menu);
-        int var2 = order.getvar2();
+        int totalCost = order.getTotalCost();
 
-        if (var2 > 100) {
+        
+        if (totalCost > 100) {
             System.out.println("Order quantity exceeds maximum limit. Please re-enter.");
             return;
         }
 
         System.out.println("Your Ord:");
-        for (Map.Entry<String, Integer> item : order.getvar45s().entrySet()) {
+        for (Map.Entry<String, Integer> item : order.getOrder().entrySet()) {
             System.out.println(item.getKey() + ": " + item.getValue());
         }
 
