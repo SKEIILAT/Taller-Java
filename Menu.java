@@ -1,6 +1,6 @@
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.Map;
+
 public class Menu {
     Map<String, Double> items;
 
@@ -13,19 +13,20 @@ public class Menu {
         items.put("Pasta", 12.0);
     }
 
-    void show() {
-        System.out.println("menu:");
+    void showMenu() {
+        System.out.println("Menu:");
+        
         for (Map.Entry<String, Double> item : items.entrySet()) {
             System.out.println(item.getKey() + ": $" + item.getValue());
         }
     }
 
-    boolean aval(String var45) {
-        return var45.equals("Burger") || var45.equals("Pizza") || var45.equals("Salad") || var45.equals("Pasta");
+    boolean aval(String food) {
+        return food.equals("Burger") || food.equals("Pizza") || food.equals("Salad") || food.equals("Pasta");
     }
 
-    double getPrice(String var45) {
-        return items.get(var45);
+    double getPrice(String food) {
+        return items.get(food);
     }
     
 }
