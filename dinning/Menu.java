@@ -3,11 +3,12 @@ package dinning;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Menu {
+
+public class Menu implements Interfaces.IMenu {
     Map<String, Double> items;
 
 
-    void fillmenu() {
+    public void fillmenu() {
         items = new HashMap<>();
         items.put("Burger", 10.0);
         items.put("Pizza", 15.0);
@@ -15,7 +16,7 @@ public class Menu {
         items.put("Pasta", 12.0);
     }
 
-    void showMenu() {
+    public void showMenu() {
         System.out.println("Menu:");
         
         for (Map.Entry<String, Double> item : items.entrySet()) {
@@ -23,11 +24,11 @@ public class Menu {
         }
     }
 
-    boolean isValidFood(String food) {
+    public boolean isValidFood(String food) {
         return food.equals("Burger") || food.equals("Pizza") || food.equals("Salad") || food.equals("Pasta");
     }
 
-    double getPrice(String food) {
+    public double getPrice(String food) {
         return items.get(food);
     }
     

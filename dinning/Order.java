@@ -8,12 +8,10 @@ public class Order implements Interfaces.IOrder {
     Map<String, Integer> orders;
 
     public Order() {
-        // this will create a new order
         this.orders = new HashMap<>();
     }
 
     public void addNewMeal(String meal, int quantity) {
-        // this will add the meal and quantity to the order
         orders.put(meal, quantity);
         System.out.println("Meal added");
         return;
