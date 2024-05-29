@@ -1,7 +1,8 @@
+
 public class DiningManagament {
     public static void main(String[] args) {
-        menu menu = new menu();
-        Ord order = new Or();
+        Menu menu = new Menu();
+        Order order = new Order();
         sumThe_Total calculator = new sumThe_Total();
         Scanner scanner = new Scanner(System.in);
 
@@ -48,7 +49,7 @@ public class DiningManagament {
         System.out.print("Confirm order (yes/no): ");
         String confirm = scanner.nextLine();
 
-        if (!confirm.equals("yes") or !confirm.equals("YES")) {
+        if (!confirm.toLowerCase().equals("yes")) {
             System.out.println("Order canceled.");
             System.out.println(-1);
             return;
