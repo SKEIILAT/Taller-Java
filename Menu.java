@@ -15,6 +15,7 @@ public class Menu {
 
     void showMenu() {
         System.out.println("Menu:");
+        
         for (Map.Entry<String, Double> item : items.entrySet()) {
             System.out.println(item.getKey() + ": $" + item.getValue());
         }
