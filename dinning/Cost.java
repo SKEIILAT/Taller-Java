@@ -14,12 +14,7 @@ public class Cost {
             mealsCount += item.getValue();
         }
 
-        double discount = 0;
-        if (mealsCount > 5) {
-            discount = 0.1;
-        } else if (mealsCount > 10) {
-            discount = 0.2;
-        }
+        double discount = mealsDiscount(mealsCount);
 
         totalCost = totalCost - (totalCost * discount);
 
@@ -29,5 +24,14 @@ public class Cost {
             totalCost = totalCost - 25;
         }
         return totalCost;
+    }
+
+    public double mealsDiscount(int mealsCount){
+        if (mealsCount > 5) {
+            return  0.1;
+        } else if (mealsCount > 10) {
+           return  0.2;
+        }
+        return 0;
     }
 }
