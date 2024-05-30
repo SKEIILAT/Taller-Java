@@ -1,5 +1,4 @@
 package Interfaces;
-
 public interface IMenu {
 
     void fillmenu();

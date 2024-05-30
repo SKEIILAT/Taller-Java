@@ -1,9 +1,8 @@
 package dinning;
-
 import java.util.HashMap;
 import java.util.Map;
 
-public class Menu implements interfaces.IMenu {
+public class Menu implements Interfaces.IMenu {
     Map<String, Double> items;
 
     public void fillmenu() {

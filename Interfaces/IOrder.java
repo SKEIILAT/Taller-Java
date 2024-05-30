@@ -1,4 +1,4 @@
-package interfaces;
+package Interfaces;
 
 import java.util.Map;
 
@@ -7,5 +7,5 @@ public interface IOrder {
 
     public Map<String, Integer> getOrder();
 
-    public int getTotalCost();
+    public int getTotalQuantity();
 }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 import dinning.Menu;
 import dinning.Order;
 import dinning.Cost;
+
 public class DiningManagament {
     public static void main(String[] args) {
         Menu menu = new Menu();
@@ -14,6 +15,7 @@ public class DiningManagament {
             menu.showMenu();
             System.out.print("Enter meal name to order or 'done' to finish: ");
             String meal = scanner.nextLine();
+            scanner.close();
             
             if (meal.equals("done")) break;
             
@@ -34,11 +36,11 @@ public class DiningManagament {
             order.addNewMeal(meal, quantity);
         }
 
-        double totalC_ = calculator.calc(order, menu);
-        int totalCost = order.getTotalCost();
+        double totalCost = calculator.calc(order, menu);
+        int totalQuantity = order.getTotalQuantity();
 
         
-        if (totalCost > 100) {
+        if (totalQuantity > 100) {
             System.out.println("Order quantity exceeds maximum limit. Please re-enter.");
             return;
         }
@@ -48,16 +50,16 @@ public class DiningManagament {
             System.out.println(item.getKey() + ": " + item.getValue());
         }
 
-        System.out.println("Total Cost: $" + totalC_);
+        System.out.println("Total Cost: $" + totalCost);
         System.out.print("Confirm order (yes/no): ");
         String confirm = scanner.nextLine();
 
-        if (!confirm.toLowerCase().equals("yes")) {
+        if (!confirm.equalsIgnoreCase("yes")) {
             System.out.println("Order canceled.");
             System.out.println(-1);
             return;
         }
 
-        System.out.println("Order confirmed. Total cost is: $" + totalC_);
+        System.out.println("Order confirmed. Total cost is: $" + totalCost);
     }
 }
