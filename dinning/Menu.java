@@ -5,7 +5,7 @@ import java.util.Map;
 public class Menu implements Interfaces.IMenu {
     Map<String, Double> items;
 
-    public void fillmenu() {
+    public void fillMenu() {
         items = new HashMap<>();
         items.put("Burger", 10.0);
         items.put("Pizza", 15.0);
@@ -14,7 +14,7 @@ public class Menu implements Interfaces.IMenu {
     }
 
     public void showMenu() {
-        fillmenu();
+        fillMenu();
         System.out.println("Menu:");
 
         for (Map.Entry<String, Double> item : items.entrySet()) {

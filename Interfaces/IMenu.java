@@ -1,7 +1,7 @@
 package Interfaces;
 public interface IMenu {
 
-    void fillmenu();
+    void fillMenu();
 
     void showMenu();
 
