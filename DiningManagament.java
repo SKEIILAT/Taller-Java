@@ -10,43 +10,19 @@ public class DiningManagament {
         Order order = new Order();
         Cost calculator = new Cost();
         Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            menu.showMenu();
-            System.out.print("Enter meal name to order or 'done' to finish: ");
-            String meal = scanner.nextLine();
-            
-            if (meal.equals("done")) break;
-            
-            if (!menu.isValidFood(meal)) {
-                System.out.println("meal not available. Please re-select.");
-                continue;
-            }
-
-            System.out.print("Enter quantity for " + meal + ": ");
-            int quantity = scanner.nextInt();
-            scanner.nextLine();
-
-            if (quantity <= 0) {
-                System.out.println("Invalid quantity. Please re-enter.");
-                continue;
-            }
-
-            order.addNewMeal(meal, quantity);
-        }
-
+      
+        Order.manageOrder(menu, order, scanner);
         
         double totalCost = calculator.calc(order, menu);
         int totalQuantity = order.getTotalQuantity();
-
-        
+    
         if (totalQuantity > 100) {
             System.out.println("Order quantity exceeds maximum limit. Please re-enter.");
             scanner.close();
             return;
         }
 
-        System.out.println("Your Ord:");
+        System.out.println("Your Order:");
         for (Map.Entry<String, Integer> item : order.getOrder().entrySet()) {
             System.out.println(item.getKey() + ": " + item.getValue());
         }
@@ -56,8 +32,7 @@ public class DiningManagament {
         String confirm = scanner.nextLine();
 
         if (!confirm.equalsIgnoreCase("yes")) {
-            System.out.println("Order canceled.");
-            System.out.println(-1);
+            System.out.println("Invalid input: Order canceled.");
             scanner.close();
             return;
         }
