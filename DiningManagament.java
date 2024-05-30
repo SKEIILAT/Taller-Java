@@ -42,6 +42,7 @@ public class DiningManagament {
         
         if (totalQuantity > 100) {
             System.out.println("Order quantity exceeds maximum limit. Please re-enter.");
+            scanner.close();
             return;
         }
 
@@ -57,6 +58,7 @@ public class DiningManagament {
         if (!confirm.equalsIgnoreCase("yes")) {
             System.out.println("Order canceled.");
             System.out.println(-1);
+            scanner.close();
             return;
         }
 
