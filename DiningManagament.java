@@ -15,7 +15,6 @@ public class DiningManagament {
             menu.showMenu();
             System.out.print("Enter meal name to order or 'done' to finish: ");
             String meal = scanner.nextLine();
-            scanner.close();
             
             if (meal.equals("done")) break;
             
@@ -26,7 +25,7 @@ public class DiningManagament {
 
             System.out.print("Enter quantity for " + meal + ": ");
             int quantity = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             if (quantity <= 0) {
                 System.out.println("Invalid quantity. Please re-enter.");
@@ -36,6 +35,7 @@ public class DiningManagament {
             order.addNewMeal(meal, quantity);
         }
 
+        
         double totalCost = calculator.calc(order, menu);
         int totalQuantity = order.getTotalQuantity();
 
@@ -61,5 +61,6 @@ public class DiningManagament {
         }
 
         System.out.println("Order confirmed. Total cost is: $" + totalCost);
+        scanner.close();
     }
 }

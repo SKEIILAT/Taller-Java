@@ -14,6 +14,7 @@ public class Menu implements Interfaces.IMenu {
     }
 
     public void showMenu() {
+        fillmenu();
         System.out.println("Menu:");
 
         for (Map.Entry<String, Double> item : items.entrySet()) {
